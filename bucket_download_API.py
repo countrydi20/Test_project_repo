@@ -38,7 +38,7 @@ def download_bucket(bucket_name: str, destination_dir: str, prefix: str = "") ->
         if os.path.exists(local_path) and os.path.getsize(local_path) == (blob.size or 0):
             skipped += 1
             continue
-
+        #I can put an edit here?
         blob.download_to_filename(local_path, retry=gcs_retry)
         count += 1
         if count % 100 == 0:
